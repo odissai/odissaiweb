@@ -16,3 +16,4 @@ Don't try to build the web site as a whole and wait for sharp and fine grain tas
 The technology used for backend when needed should be Python.
 Use replicate.com and store api key in .env to generate media like images.
 You can use any model available with openrouter.ai if you need any kind of specialized generation.
+Take the company information contact in .env also.
