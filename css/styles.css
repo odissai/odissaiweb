@@ -24,6 +24,17 @@ body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+.main-content {
+    position: relative;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--gray-light);
 }
 
 /* Header & Navigation */
@@ -97,6 +108,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: calc(var(--header-height) + 2rem) 2rem 2rem;
+    position: relative;
 }
 
 .hero-content {
@@ -125,55 +137,186 @@ body {
     border-radius: 5px;
     font-weight: bold;
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 3;
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
 }
 
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
 /* Solutions Section */
 .solutions {
-    padding: 5rem 2rem;
     background-color: var(--gray-light);
+    width: 100%;
+    padding-top: var(--header-height);
 }
 
 .solutions h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    padding: 2rem 1rem;
     color: var(--text-color);
+    background: var(--gray-light);
+    margin: 0;
 }
 
-.solutions-grid {
+.solutions-container {
+    position: relative;
+    background-color: var(--gray-light);
+    padding: 2rem 0;
+}
+
+.solution-panel {
+    position: relative;
+    width: 100%;
     max-width: var(--max-width);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
 }
 
-.solution-card {
-    background: white;
+
+.solution-image {
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    position: relative;
+}
+
+.solution-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.solution-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.solution-content h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.solution-overview {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.solution-details {
+    background: var(--gray-light);
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
 
-.solution-card:hover {
-    transform: translateY(-5px);
-}
-
-.solution-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.solution-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.solution-details h4 {
     color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.solution-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.solution-details li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.solution-details li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+    .solution-panel {
+        flex-direction: row;
+    }
+
+    .solution-image {
+        width: 50%;
+        height: 100%;
+    }
+
+    .solution-content {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .solutions h2 {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .solutions-container {
+        padding-top: calc(var(--header-height) + 4rem);
+    }
+
+    .solution-panel {
+        height: calc(100vh - var(--header-height) - 4rem);
+    }
+
+    .solution-image {
+        height: 30%;
+    }
+
+    .solution-content {
+        padding: 1rem;
+    }
+
+    .solution-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .solution-overview {
+        font-size: 1rem;
+    }
 }
 
 /* Footer */
@@ -181,6 +324,9 @@ body {
     background-color: var(--text-color);
     color: white;
     padding: 4rem 2rem 2rem;
+    position: relative;
+    width: 100%;
+    z-index: 0;
 }
 
 .footer-content {

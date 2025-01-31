@@ -28,47 +28,129 @@
         </nav>
     </header>
 
-    <main>
+    <main class="main-content">
         <section class="hero">
             <div class="hero-content">
                 <h1>Experts en Solutions d'Intelligence Artificielle</h1>
                 <p>Accélérez votre transformation numérique avec nos services d'IA sur mesure et sécurisés</p>
                 <a href="#solutions" class="cta-button">Découvrir nos Solutions</a>
             </div>
+            <div class="scroll-indicator">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </div>
         </section>
 
         <section id="solutions" class="solutions">
             <h2>Nos Solutions</h2>
-            <div class="solutions-grid">
-                <article class="solution-card">
-                    <div class="solution-icon">👥</div>
-                    <h3>Formation des Équipes</h3>
-                    <p>Formez vos équipes aux technologies d'IA et développez leurs compétences pour l'avenir numérique.</p>
+            <div class="solutions-container">
+                <article class="solution-panel" id="formation">
+                    <div class="solution-image">
+                        <img src="https://replicate.delivery/pbxt/IJzjuqkAXB8NsrYtHRwxYGQkZUVIoOWxqxlAWUgn4bng0TXhA/out.png" alt="Formation des Équipes">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Formation des Équipes</h3>
+                        <p class="solution-overview">Formez vos équipes aux technologies d'IA et développez leurs compétences pour l'avenir numérique.</p>
+                        <div class="solution-details">
+                            <h4>Points Clés</h4>
+                            <ul>
+                                <li>Formation personnalisée aux outils d'IA</li>
+                                <li>Ateliers pratiques et cas d'usage réels</li>
+                                <li>Certification et suivi des compétences</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
-                <article class="solution-card">
-                    <div class="solution-icon">🤖</div>
-                    <h3>Agents IA sur Mesure</h3>
-                    <p>Développement d'agents d'IA personnalisés intégrés à Microsoft Office 365 et autres plateformes pour répondre à vos besoins spécifiques.</p>
+
+                <article class="solution-panel" id="agents">
+                    <div class="solution-image">
+                        <img src="https://replicate.delivery/pbxt/AKjPhFwgkTqkGYlmHRwxYGQkZUVIoOWxqxlAWUgn4bng1TXhA/out.png" alt="Agents IA sur Mesure">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Agents IA sur Mesure</h3>
+                        <p class="solution-overview">Développement d'agents d'IA personnalisés intégrés à Microsoft Office 365 et autres plateformes.</p>
+                        <div class="solution-details">
+                            <h4>Caractéristiques</h4>
+                            <ul>
+                                <li>Intégration native avec vos outils</li>
+                                <li>Personnalisation selon vos processus</li>
+                                <li>Sécurité et confidentialité garanties</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
-                <article class="solution-card">
-                    <div class="solution-icon">⚡</div>
-                    <h3>Applications IA Rapides</h3>
-                    <p>Accélérez votre développement d'applications grâce à nos solutions IA intégrées.</p>
+
+                <article class="solution-panel" id="applications">
+                    <div class="solution-image">
+                        <img src="https://replicate.delivery/pbxt/CKjPhFwgkTqkGYlmHRwxYGQkZUVIoOWxqxlAWUgn4bng2TXhA/out.png" alt="Applications IA Rapides">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Applications IA Rapides</h3>
+                        <p class="solution-overview">Accélérez votre développement d'applications grâce à nos solutions IA intégrées.</p>
+                        <div class="solution-details">
+                            <h4>Avantages</h4>
+                            <ul>
+                                <li>Développement accéléré</li>
+                                <li>Intégration API simplifiée</li>
+                                <li>Performance optimisée</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
-                <article class="solution-card">
-                    <div class="solution-icon">💡</div>
-                    <h3>Conseil en Transformation IA</h3>
-                    <p>Accompagnement stratégique pour réussir votre transition vers l'IA.</p>
+
+                <article class="solution-panel" id="conseil">
+                    <div class="solution-image">
+                        <img src="https://replicate.delivery/pbxt/DKjPhFwgkTqkGYlmHRwxYGQkZUVIoOWxqxlAWUgn4bng3TXhA/out.png" alt="Conseil en Transformation IA">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Conseil en Transformation IA</h3>
+                        <p class="solution-overview">Accompagnement stratégique pour réussir votre transition vers l'IA.</p>
+                        <div class="solution-details">
+                            <h4>Notre Approche</h4>
+                            <ul>
+                                <li>Analyse de maturité IA</li>
+                                <li>Feuille de route personnalisée</li>
+                                <li>Accompagnement au changement</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
-                <article class="solution-card">
-                    <div class="solution-icon">🔒</div>
-                    <h3>Hébergement Sécurisé</h3>
-                    <p>Solutions d'hébergement sécurisées pour vos modèles d'IA en conformité avec les normes.</p>
+
+                <article class="solution-panel" id="hebergement">
+                    <div class="solution-image">
+                        <img src="https://replicate.delivery/pbxt/EKjPhFwgkTqkGYlmHRwxYGQkZUVIoOWxqxlAWUgn4bng4TXhA/out.png" alt="Hébergement Sécurisé">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Hébergement Sécurisé</h3>
+                        <p class="solution-overview">Solutions d'hébergement sécurisées pour vos modèles d'IA en conformité avec les normes.</p>
+                        <div class="solution-details">
+                            <h4>Sécurité</h4>
+                            <ul>
+                                <li>Conformité RGPD</li>
+                                <li>Chiffrement de bout en bout</li>
+                                <li>Surveillance 24/7</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
-                <article class="solution-card">
-                    <div class="solution-icon">🎯</div>
-                    <h3>Renforcement des Équipes</h3>
-                    <p>Intégrez nos experts IA à vos équipes pour accélérer vos projets et transférer les compétences clés.</p>
+
+                <article class="solution-panel" id="renforcement">
+                    <div class="solution-image">
+                        <img src="https://replicate.delivery/pbxt/FKjPhFwgkTqkGYlmHRwxYGQkZUVIoOWxqxlAWUgn4bng5TXhA/out.png" alt="Renforcement des Équipes">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Renforcement des Équipes</h3>
+                        <p class="solution-overview">Intégrez nos experts IA à vos équipes pour accélérer vos projets.</p>
+                        <div class="solution-details">
+                            <h4>Bénéfices</h4>
+                            <ul>
+                                <li>Expertise immédiate</li>
+                                <li>Transfer de compétences</li>
+                                <li>Accélération des projets</li>
+                            </ul>
+                        </div>
+                    </div>
                 </article>
             </div>
         </section>
