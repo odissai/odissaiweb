@@ -1,0 +1,112 @@
+/* Contact Section */
+.contact {
+    min-height: 100vh;
+    padding: calc(var(--header-height) + 2rem) 2rem;
+    background: var(--gray-light);
+    scroll-margin-top: var(--header-height);
+}
+
+.contact-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    background: var(--background-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.contact-details {
+    margin-top: 1rem;
+}
+
+.contact-details p {
+    margin: 1rem 0;
+    color: var(--text-color);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-button {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        text-align: center;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        text-align: center;
+    }
+}
