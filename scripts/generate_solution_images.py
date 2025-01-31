@@ -11,27 +11,27 @@ import time
 # Configuration
 SOLUTIONS = {
     "formation": {
-        "prompt": "A professional training room with people learning about AI, modern corporate setting, bright and engaging atmosphere, focus on technology and learning",
+        "prompt": "Professional training room with people learning about AI, ancient Greek style columns and parchment scrolls, Odyssey theme with mythological elements blended with modern technology, bright engaging atmosphere", 
         "name": "Formation des Équipes"
     },
     "agents": {
-        "prompt": "AI agents working seamlessly with office software, abstract visualization of AI assistants integrated with Microsoft Office, clean and professional",
+        "prompt": "AI agents as ancient Greek automatons working with office software, abstract visualization with triremes and laurel wreaths, clean professional style with Mediterranean colors",
         "name": "Agents IA sur Mesure"
     },
     "applications": {
-        "prompt": "Fast development of AI applications, showing code and AI models working together, modern tech visualization, dynamic and efficient",
+        "prompt": "Fast AI development through Antikythera-like mechanism, code as Greek stone inscriptions, dynamic Mediterranean style with azure blue and terracotta", 
         "name": "Applications IA Rapides"
     },
     "conseil": {
-        "prompt": "Strategic AI transformation consulting, business professionals discussing AI strategy, modern office setting, professional and forward-thinking",
+        "prompt": "Strategic AI consulting with Greek philosophers, modern office with columns and parchment-style whiteboards, professional style with Homeric elements",
         "name": "Conseil en Transformation IA"
     },
     "hebergement": {
-        "prompt": "Secure AI model hosting, visualization of protected cloud infrastructure, cybersecurity elements, professional and technical",
+        "prompt": "Secure AI hosting in Mount Olympus cloud infrastructure with temple servers, cybersecurity as mythological guardians, technical classical architecture",
         "name": "Hébergement Sécurisé"
     },
     "renforcement": {
-        "prompt": "AI experts collaborating with team members, knowledge transfer in modern office, professional development scene, teamwork focused",
+        "prompt": "AI experts as Greek mentors in ancient library with digital scrolls, teamwork focused with Hellenistic art style",
         "name": "Renforcement des Équipes"
     }
 }
@@ -41,7 +41,7 @@ def create_workflow_json(prompt):
     return {
         "1": {
             "inputs": {
-                "text": prompt + ", professional quality, highly detailed, 8k resolution, photorealistic, masterpiece",
+                "text": prompt + ", Ghibli art style, ancient Greek theme, highly detailed, 8k resolution, masterpiece", 
                 "clip": ["2", 1]
             },
             "class_type": "CLIPTextEncode",
@@ -55,7 +55,7 @@ def create_workflow_json(prompt):
         "3": {
             "inputs": {
                 "width": 768,
-                "height": 1024,
+                "height": 1024, 
                 "batch_size": 1
             },
             "class_type": "EmptyLatentImage",
@@ -67,7 +67,7 @@ def create_workflow_json(prompt):
                 "steps": 20,
                 "cfg": 7,
                 "sampler_name": "dpmpp_2m_sde",
-                "scheduler": "karras",
+                "scheduler": "karras", 
                 "denoise": 1,
                 "model": ["2", 0],
                 "positive": ["1", 0],
@@ -173,9 +173,9 @@ def generate_image(prompt, solution_id, generation_dir, assets_dir):
         # Create prediction using replicate client
         try:
             logging.info("Starting Replicate API call...")
-            model = "stability-ai/stable-diffusion:db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf"
+            model = "aleksa-codes/flux-ghibsky-illustration:a9f94946fa0377091ac0bcfe61b0d62ad9a85224e4b421b677d4747914b908c0"
             input_params = {
-                "prompt": prompt + ", professional quality, highly detailed",
+                "prompt": prompt + ", Ghibli art style, ancient Greek theme, highly detailed",
                 "width": 768,
                 "height": 1024,
                 "num_outputs": 1

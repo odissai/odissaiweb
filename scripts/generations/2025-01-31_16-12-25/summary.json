@@ -1,0 +1,32 @@
+{
+  "formation": {
+    "name": "Formation des Équipes",
+    "url": "https://replicate.delivery/xezq/kpV081iY7mpuG9qI4Qg3qOfJAUffDJ6pdbUSjZNEwqlGTTVoA/out-0.webp",
+    "local_path": "assets\\images\\solutions\\formation.webp"
+  },
+  "agents": {
+    "name": "Agents IA sur Mesure",
+    "url": "https://replicate.delivery/xezq/gEHcR4yNx6JnOh2Gr8wcQf2GUY4UdK0iP6edByurKbpxppKUA/out-0.webp",
+    "local_path": "assets\\images\\solutions\\agents.webp"
+  },
+  "applications": {
+    "name": "Applications IA Rapides",
+    "url": "https://replicate.delivery/xezq/ORC8Heehn9iA6Uga2vbmS1zR8BSCKc14TaeQVF1COdUPUTVoA/out-0.webp",
+    "local_path": "assets\\images\\solutions\\applications.webp"
+  },
+  "conseil": {
+    "name": "Conseil en Transformation IA",
+    "url": "https://replicate.delivery/xezq/YaYDtUok4fR5P647H1oe015ODh6r7WvaYKGIipYDYnYVqpKUA/out-0.webp",
+    "local_path": "assets\\images\\solutions\\conseil.webp"
+  },
+  "hebergement": {
+    "name": "Hébergement Sécurisé",
+    "url": "https://replicate.delivery/xezq/Xhf98YJf3NpXv0Z4grjIwSHx1iUvGBfAQUrl05zgmKnEVTVoA/out-0.webp",
+    "local_path": "assets\\images\\solutions\\hebergement.webp"
+  },
+  "renforcement": {
+    "name": "Renforcement des Équipes",
+    "url": "https://replicate.delivery/xezq/Ha0ucL8gj2oVHZQ5jTD2pc41yWb71rxyhYyrWuAKIZIsaqCF/out-0.webp",
+    "local_path": "assets\\images\\solutions\\renforcement.webp"
+  }
+}
