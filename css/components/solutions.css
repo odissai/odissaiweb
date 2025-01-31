@@ -125,6 +125,42 @@
     font-weight: bold;
 }
 
+/* Floating Navigation */
+.floating-nav {
+    position: fixed;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.float-nav-item {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.float-nav-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.float-nav-label {
+    display: none;
+}
+
+.float-nav-item:hover .float-nav-dot,
+.float-nav-item.active .float-nav-dot {
+    opacity: 1;
+}
+
 @media (min-width: 1200px) {
     .solution-panel {
         flex-direction: row;
