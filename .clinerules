@@ -1,0 +1,18 @@
+This is a file containing context, not direct instruction to build.
+This application is the corporate web site of the OdissAI company hosted at https://odissai.com.
+The company is a AI specialized consulting firm (ESN spécialisée IA en français) focus on:
+* Training on AI tools for any position in customer company
+* Building of custom AI tools and agents for customers users
+* Traditional entreprise technology consulting service but faster and cheaper thaks to AI
+* Private AI model hosting
+* Building new AI product for the market to answer main identified pain points of the customers 
+The goal is to help customers digitally transform their company to increase their performance at the next level.
+
+The application is a web site with section to present the company, the offers, the spirit, take contact and the current job position opened. It may also have a blog section for news and article.
+The web site should be in english and french.
+The web site must always be reactive for mobile and desktop browers.
+The company is called OdissAI which is a word game on The Odyssey, so sections, offers, tag lines and speach can use the odyssey as a fun inspiration, as well for the artistic direction
+Don't try to build the web site as a whole and wait for sharp and fine grain task instructions.
+The technology used for backend when needed should be Python.
+Use replicate.com and store api key in .env to generate media like images.
+You can use any model available with openrouter.ai if you need any kind of specialized generation.
