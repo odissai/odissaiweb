@@ -106,7 +106,7 @@ def create_directories():
     
     return generation_dir, assets_dir
 
-def download_image(url, solution_id, assets_dir):
+def download_image(url, solution_id, assets_dir, generation_dir):
     """Download image from URL and save it locally"""
     try:
         logging.info(f"Downloading image from {url}")
@@ -115,7 +115,7 @@ def download_image(url, solution_id, assets_dir):
         max_retries = 3
         for attempt in range(max_retries):
             try:
-                response = requests.get(url, stream=True, timeout=30)
+                response = requests.get(url, timeout=30)
                 response.raise_for_status()
                 break
             except (requests.exceptions.RequestException, requests.exceptions.Timeout) as e:
@@ -128,23 +128,31 @@ def download_image(url, solution_id, assets_dir):
         path = urlparse(url).path
         ext = os.path.splitext(path)[1] or '.webp'
         
-        # Create local file path
+        # Create local file paths
         filename = f"{solution_id}{ext}"
-        filepath = os.path.join(assets_dir, filename)
+        assets_filepath = os.path.join(assets_dir, filename)
+        generation_filepath = os.path.join(generation_dir, filename)
         
-        # Save the image
-        with open(filepath, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                if chunk:
-                    f.write(chunk)
+        # Get image content
+        image_content = response.content
         
-        # Verify file was created and has content
-        if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
-            logging.info(f"Image successfully saved to {filepath}")
-            return filepath
-        else:
-            logging.error(f"Failed to save image or file is empty: {filepath}")
-            return None
+        # Save the image in both directories
+        for filepath in [assets_filepath, generation_filepath]:
+            try:
+                with open(filepath, 'wb') as f:
+                    f.write(image_content)
+                
+                # Verify file was created and has content
+                if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
+                    logging.info(f"Image successfully saved to {filepath}")
+                else:
+                    logging.error(f"Failed to save image or file is empty: {filepath}")
+                    return None
+            except IOError as e:
+                logging.error(f"IOError while saving image to {filepath}: {str(e)}")
+                return None
+        
+        return assets_filepath
             
     except Exception as e:
         logging.error(f"Error downloading image: {str(e)}")
@@ -216,7 +224,7 @@ def generate_image(prompt, solution_id, generation_dir, assets_dir):
         logging.info(f"Got image URL: {image_url}")
         
         # Download the image
-        local_path = download_image(image_url, solution_id, assets_dir)
+        local_path = download_image(image_url, solution_id, assets_dir, generation_dir)
         
         if local_path:
             # Save metadata
