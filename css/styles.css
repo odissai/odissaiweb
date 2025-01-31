@@ -190,6 +190,46 @@ body {
     margin: 0;
 }
 
+.solutions-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--gray-light);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.solutions-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    background: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.solutions-nav a:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .solutions-nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+    }
+    
+    .solutions-nav a {
+        text-align: center;
+    }
+}
+
 .solutions-container {
     position: relative;
     background-color: var(--gray-light);
