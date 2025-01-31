@@ -177,21 +177,18 @@ body {
 /* Solutions Section */
 .solutions {
     position: relative;
-    height: 100vh;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
     background-color: var(--gray-light);
-    padding-top: var(--header-height);
 }
 
 .solutions-container {
     background-color: var(--gray-light);
+    padding-top: var(--header-height);
 }
 
 .solutions-header {
     background: var(--background-color);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1rem 0;
+    padding: 2rem 0;
     width: 100%;
 }
 
@@ -231,15 +228,15 @@ body {
 }
 
 .solution-panel {
-    min-height: calc(100vh - var(--header-height));
+    min-height: 100vh;
     width: 100%;
     margin: 0;
     background: white;
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    scroll-snap-align: start;
     position: relative;
+    scroll-margin-top: var(--header-height);
 }
 
 .solution-image {
@@ -258,7 +255,6 @@ body {
 .solution-content {
     flex: 1;
     padding: 2rem;
-    overflow-y: auto;
 }
 
 .solution-content h3 {
