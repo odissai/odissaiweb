@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Handle navigation clicks
+    // Handle smooth scrolling for all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -27,7 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+                // Ensure smooth scrolling behavior
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
                 
                 // Close mobile menu if open
                 mobileMenu?.classList.remove('active');
@@ -35,6 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Specific handling for scroll indicator to ensure it works
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', (e) => {
+            e.preventDefault();
+            const solutionsSection = document.querySelector('#solutions');
+            if (solutionsSection) {
+                solutionsSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
 
     const floatNavItems = document.querySelectorAll('.float-nav-item');
     const solutionPanels = document.querySelectorAll('.solution-panel');

@@ -64,7 +64,7 @@
     border: 2px solid var(--accent-color);
     transition: all 0.3s ease;
     position: relative;
-    z-index: 3;
+    z-index: 1;
 }
 
 .cta-button:hover {
@@ -96,11 +96,21 @@
     opacity: 0.9;
     animation: bounce 2s infinite;
     cursor: pointer;
-    padding: 1rem;
+    padding: 2rem;
     font-family: var(--heading-font);
     font-size: 0.9rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    z-index: 2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-indicator svg {
+    width: 32px;
+    height: 32px;
 }
 
 .scroll-indicator:hover {
