@@ -18,6 +18,7 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
@@ -32,7 +33,6 @@ body {
 .main-content {
     position: relative;
     min-height: 100vh;
-    overflow-y: auto;
     overflow-x: hidden;
     background: var(--gray-light);
 }
@@ -176,17 +176,30 @@ body {
 
 /* Solutions Section */
 .solutions {
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
     background-color: var(--gray-light);
-    width: 100%;
     padding-top: var(--header-height);
+}
+
+.solutions-container {
+    background-color: var(--gray-light);
+}
+
+.solutions-header {
+    background: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    width: 100%;
 }
 
 .solutions h2 {
     text-align: center;
     font-size: 2.5rem;
-    padding: 2rem 1rem;
+    padding: 1rem;
     color: var(--text-color);
-    background: var(--gray-light);
     margin: 0;
 }
 
@@ -195,8 +208,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem 2rem;
-    background: var(--gray-light);
+    padding: 0 2rem 1rem;
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -218,37 +230,17 @@ body {
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    .solutions-nav {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 1rem;
-    }
-    
-    .solutions-nav a {
-        text-align: center;
-    }
-}
-
-.solutions-container {
-    position: relative;
-    background-color: var(--gray-light);
-    padding: 2rem 0;
-}
-
 .solution-panel {
-    position: relative;
+    min-height: calc(100vh - var(--header-height));
     width: 100%;
-    max-width: var(--max-width);
-    margin: 2rem auto;
+    margin: 0;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    scroll-snap-align: start;
+    position: relative;
 }
-
 
 .solution-image {
     width: 100%;
@@ -316,11 +308,12 @@ body {
 @media (min-width: 1200px) {
     .solution-panel {
         flex-direction: row;
+        align-items: stretch;
     }
 
     .solution-image {
         width: 50%;
-        height: 100%;
+        height: auto;
     }
 
     .solution-content {
@@ -329,17 +322,18 @@ body {
 }
 
 @media (max-width: 768px) {
-    .solutions h2 {
-        font-size: 2rem;
+    .solutions-nav {
+        flex-direction: column;
+        align-items: stretch;
         padding: 1rem;
     }
-
-    .solutions-container {
-        padding-top: calc(var(--header-height) + 4rem);
+    
+    .solutions-nav a {
+        text-align: center;
     }
 
     .solution-panel {
-        height: calc(100vh - var(--header-height) - 4rem);
+        padding: 1rem;
     }
 
     .solution-image {
