@@ -11,27 +11,27 @@ import time
 # Configuration
 SOLUTIONS = {
     "formation": {
-        "prompt": "Professional training room with people learning about AI, ancient Greek style columns and parchment scrolls, Odyssey theme with mythological elements blended with modern technology, bright engaging atmosphere", 
+        "prompt": "Professional training room with ancient Greek android AI teachers in togas and laurel wreaths instructing humans, like Ulysses teaching his crew to resist the Sirens' song, knowledge represented as ethereal musical notes, mythological elements blended with modern technology, bright engaging atmosphere with Mediterranean sea in background, marble-textured androids with glowing circuit patterns", 
         "name": "Formation des Équipes"
     },
     "agents": {
-        "prompt": "AI agents as ancient Greek automatons working with office software, abstract visualization with triremes and laurel wreaths, clean professional style with Mediterranean colors",
+        "prompt": "AI agents as ancient Greek marble-textured androids with glowing circuit patterns working with office software, visualization with Ulysses' ship navigating between Scylla's six heads and Charybdis' whirlpool represented as data streams, android assistants wearing togas and laurel wreaths avoiding digital monsters, clean professional style with Mediterranean sea colors",
         "name": "Agents IA sur Mesure"
     },
     "applications": {
-        "prompt": "Fast AI development through Antikythera-like mechanism, code as Greek stone inscriptions, dynamic Mediterranean style with azure blue and terracotta", 
+        "prompt": "Fast AI development through Antikythera-like mechanism, ancient Greek android developers in togas with glowing circuit patterns inscribing code on marble tablets, on Circe's island where men were transformed to pigs, showing transformation of data, with Ithaca's azure blue waters and terracotta, Ulysses' ship sailing through lines of code", 
         "name": "Applications IA Rapides"
     },
     "conseil": {
-        "prompt": "Strategic AI consulting with Greek philosophers, modern office with columns and parchment-style whiteboards, professional style with Homeric elements",
+        "prompt": "Strategic AI consulting with Greek philosopher androids in marble-textured bodies and glowing circuit patterns, in Calypso's grotto with modern office elements, ancient android advisors in togas analyzing sea charts like Ulysses outsmarting the one-eyed Cyclops Polyphemus, showing strategic vision and clever problem-solving",
         "name": "Conseil en Transformation IA"
     },
     "hebergement": {
-        "prompt": "Secure AI hosting in Mount Olympus cloud infrastructure with temple servers, cybersecurity as mythological guardians, technical classical architecture",
+        "prompt": "Secure AI hosting in Mount Olympus cloud infrastructure with temple servers, cybersecurity represented as android Poseidon with marble texture and glowing circuits commanding storms to protect data like Ulysses protecting his fleet from the Laestrygonian giants' attack, technical classical architecture with stormy seas and flying boulders",
         "name": "Hébergement Sécurisé"
     },
     "renforcement": {
-        "prompt": "AI experts as Greek mentors in ancient library with digital scrolls, teamwork focused with Hellenistic art style",
+        "prompt": "AI experts as Greek android mentors with marble texture and glowing circuit patterns in ancient library of King Alcinous, digital scrolls showing Ulysses' journey as learning paths, android scholars in togas working with Phaeacian ship builders, team overcoming challenges like Ulysses' crew passing the Wandering Rocks, Hellenistic art style with maritime elements",
         "name": "Renforcement des Équipes"
     }
 }
@@ -98,10 +98,10 @@ def create_workflow_json(prompt):
 def create_directories():
     """Create necessary directories for storing generated images"""
     date_str = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    generation_dir = os.path.join("generations", date_str)
+    generation_dir = os.path.join("scripts", "generations", date_str)
     os.makedirs(generation_dir, exist_ok=True)
     
-    assets_dir = os.path.join("assets", "images", "solutions")
+    assets_dir = os.path.join("scripts", "assets", "images", "solutions")
     os.makedirs(assets_dir, exist_ok=True)
     
     return generation_dir, assets_dir
@@ -256,7 +256,7 @@ def generate_image(prompt, solution_id, generation_dir, assets_dir):
 def main():
     """Main function to generate images for all solutions"""
     # Ensure generations directory exists for log file
-    os.makedirs("generations", exist_ok=True)
+    os.makedirs(os.path.join("scripts", "generations"), exist_ok=True)
     
     # Set up logging
     logging.basicConfig(
@@ -264,7 +264,7 @@ def main():
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
             logging.StreamHandler(),
-            logging.FileHandler(os.path.join("generations", "generation.log"), encoding='utf-8')
+            logging.FileHandler(os.path.join("scripts", "generations", "generation.log"), encoding='utf-8')
         ]
     )
 
